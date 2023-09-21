@@ -14,8 +14,9 @@ const logoQuestions = ([
         },
         {
             type: 'list',
+            name: 'shape',
             message: 'What shape would you like your logo to be in?',
-            choices: ['Circle', 'Sqaure', 'Triangle'],
+            choices: ['circle', 'sqaure', 'triangle'],
         }
     ]);
 
@@ -24,9 +25,26 @@ inquirer.prompt(logoQuestions).then((answers) => {
     const color = answers.color;
     const shape = answers.shape;
 
-    const svg = `<svg viewBox = "0 0 200 200"> <${shape} fill="${color}" width = "200" height= "200" /> </svg>`;
+    const svg = `<svg viewBox = "0 0 200 200">
+    <${shape} fill="${color}" width="200" height="200" />
+    <text x="50" y="50" text-anchor="middle" font-size="24" fill="black">${name}</text>
+    </svg>`;
 
     fs.writeFileSync('logo.svg', svg);
 
-    console.log('Logo generated.')
+    console.log("Logo generated.");
 });
+
+ /*
+const svg2png = require('svg2png');
+
+const svgFile = './logo.svg';
+const pngFile = './logo.png';
+
+svg2png(svgFile, pngFile)
+    .then(() => {
+        console.log("Logo generated.");
+    })
+    .catch((err) => {
+        console.error(err);
+    })
