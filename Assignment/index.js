@@ -1,8 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-inquirer
-    .prompt([
+const logoQuestions = ([
         {
             type: 'input',
             name: 'name',
@@ -19,3 +18,15 @@ inquirer
             choices: ['Circle', 'Sqaure', 'Triangle'],
         }
     ]);
+
+inquirer.prompt(logoQuestions).then((answers) => {
+    const name = answers.name;
+    const color = answers.color;
+    const shape = answers.shape;
+
+    const svg = `<svg viewBox = "0 0 200 200"> <${shape} fill="${color}" width = "200" height= "200" /> </svg>`;
+
+    fs.writeFileSync('logo.svg', svg);
+
+    console.log('Logo generated.')
+});
