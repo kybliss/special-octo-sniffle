@@ -33,20 +33,3 @@ inquirer.prompt(logoQuestions).then((answers) => {
     fs.writeFileSync('logo.svg', svg);
     console.log("Logo generated.");
 });
-
-/*
-fs.writeFileSync('logo.svg', svg);
-
-const svg2png = require('svg2png');
-
-const svgFile = './logo.svg';
-const pngFile = './logo.png';
-
-svg2png(svgFile, pngFile)
-    .then(() => {
-        console.log("Logo generated.");
-    })
-    .catch((err) => {
-        console.error(err);
-    });
-*/
