@@ -29,13 +29,10 @@ inquirer.prompt(logoQuestions).then((answers) => {
     <${shape} fill="${color}" width="200" height="200" />
     <text x="50" y="50" text-anchor="middle" font-size="24" fill="black">${name}</text>
     </svg>`;
-
-    fs.writeFileSync('logo.svg', svg);
-
-    console.log("Logo generated.");
 });
 
- /*
+fs.writeFileSync('logo.svg', svg);
+
 const svg2png = require('svg2png');
 
 const svgFile = './logo.svg';
@@ -47,4 +44,4 @@ svg2png(svgFile, pngFile)
     })
     .catch((err) => {
         console.error(err);
-    })
+    });
