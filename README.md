@@ -4,10 +4,8 @@ This is a Node.js logo generator that I've written. It prompts the user to enter
 
 ## CREDITS
 
-This program was written by me, Kyle Oros, with assistance from an AskBCS assistant. I referred to instructor chapters in the UCI bootcamp to assist in my writing.
+This program was written by me, Kyle Oros, with assistance from an AskBCS assistant and a bootcamp tutor. I referred to instructor chapters in the UCI bootcamp to assist in my writing.
 
 ## LINK
 
 https://github.com/kybliss/special-octo-sniffle
-
-The active file, index.js, is located in the Assignment folder.
